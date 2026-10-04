@@ -1,6 +1,6 @@
-# Curious Works Portfolio
+# Kantinan Khongnuam Portfolio
 
-A friendly, English-first React portfolio for projects, team awards, and public contact links.
+A dark, English-first React portfolio for projects, team achievements, significant team activities, and public contact links.
 
 ## Run locally
 
@@ -22,29 +22,32 @@ npm run preview
 
 Edit [`src/content.js`](src/content.js):
 
-- Replace `Your Name` and add education details.
+- Set your public name and add education details.
 - Update the introduction and skills/topics.
-- Add the profile photo path, for example `/images/profile.jpg`.
-- Add GitHub, email, and optional LinkedIn URLs.
+- The Hero portrait is set to `/images/profile-hero.png`; replace the file or change `profile.photo` to use another image.
+- Review the public contact channels in `profile.links` before deploying.
 - Fill in the E-Pretest contribution.
-- Add public project links when available.
+- Set each project's `links` entry to its public repository URL.
+- Add each team story's images and your own contribution in `role`.
 
-Only details supplied or checked by the owner should be published. The award cards describe team results; project cards describe the owner’s own contribution separately.
+Team stories group competition milestones and activities. Robocon uses one story per year, with national awards and international representation identified separately. Project contributions and team-story roles describe the owner's own work.
 
 ## Images
 
-Put approved images in [`public/images/`](public/images/). The GraphRAG architecture image in this draft is copied from the SemiGraph project. Other project cards use simple illustrations until the owner’s photos and visualizations are added.
+Put approved images in [`public/images/`](public/images/). Project cards currently use CSS/SVG illustrations, including a Knowledge Graph illustration for Agentic GraphRAG Architecture. The SemiGraph architecture image is available in this folder for later use.
 
 Suggested names:
 
-- `profile.jpg` — portrait
+- `profile-hero.png` — Hero portrait with a dark background
 - `robocon-team.jpg` — team photo
 - `robocon-robot.jpg` — robot photo
 - `smooth-path-demo.jpg` — path visualization
 - `e-pretest-screen.jpg` — E-Pretest screenshot
-- `lidar-slam-demo.jpg` — LiDAR SLAM project photo or visualization
+- `floor-edge-demo.jpg` — RealSense floor-edge detection photo or visualization
 
 Update `image` and `imageAlt` in `src/content.js` to use a project image. Keep images compressed for faster loading.
+
+Team cards have `Image1.png`–`Image4.png` paths ready in each `public/images/teams/<story-id>/` folder. Replace the mock PNGs with your own images and update their alt text and captions in `src/content.js`. Each gallery slides directly on its card every two seconds, with previous/next and Pause/Resume controls. See [`public/images/README.md`](public/images/README.md) for the folder list, examples, and certificate formatting.
 
 ## Deploy
 
@@ -60,4 +63,6 @@ No single-page-app rewrite is needed because navigation uses section links on on
 
 - [`CONTEXT.md`](CONTEXT.md) — shared portfolio vocabulary
 - [`PROJECT-PLAN.md`](PROJECT-PLAN.md) — 14-day path to a public submission
-- [`src/content.js`](src/content.js) — editable profile, project, and award data
+- [`Design.md`](Design.md) — design system, team gallery layout, and image data format
+- [`src/content.js`](src/content.js) — editable profile, project, and team-story data
+- [`src/TeamStories.jsx`](src/TeamStories.jsx) — team cards and automatic image slideshows
